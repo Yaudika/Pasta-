@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: La Magia de la Pasta Fresca Casera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-bottom: 4rem;
+        }
+        .flow-step:not(:last-child)::after {
+            content: '▼';
+            font-size: 2rem;
+            color: #F58800;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+         @media (min-width: 1024px) {
+            .flow-step:not(:last-child)::after {
+                content: '►';
+                bottom: 50%;
+                left: auto;
+                right: -2.5rem;
+                transform: translateY(50%);
+            }
+             .flow-step {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#FFF8E1]">
+    
+    <!-- Palette: Energetic & Playful -->
+    <!-- No Mermaid JS or SVG was used in this file. All visuals are created with Chart.js (Canvas) or structured HTML/CSS with Tailwind. -->
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#3D0000] mb-2">La Magia de la Pasta Fresca</h1>
+            <p class="text-lg md:text-xl text-[#F58800]">Tu receta con Harina 00 y Sémola</p>
+        </header>
+
+        <main>
+            <section id="ingredients" class="mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold text-[#3D0000] mb-4 text-center">Paso 1: Los Ingredientes</h2>
+                        <p class="text-gray-600 mb-6 text-center">La combinación de harinas es el secreto de una pasta perfecta. La harina 00 aporta suavidad y elasticidad, mientras que la sémola de trigo duro proporciona la firmeza y textura ideal.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center"><span class="text-2xl mr-3">🌾</span><div><strong>100g</strong> de Harina 00</div></li>
+                            <li class="flex items-center"><span class="text-2xl mr-3">🌾</span><div><strong>50g</strong> de Sémola de Trigo Duro</div></li>
+                            <li class="flex items-center"><span class="text-2xl mr-3">🥚</span><div><strong>1</strong> Huevo grande</div></li>
+                            <li class="flex items-center"><span class="text-2xl mr-3">🫒</span><div><strong>1</strong> Cucharada de Aceite de Oliva</div></li>
+                            <li class="flex items-center"><span class="text-2xl mr-3">🧂</span><div><strong>1</strong> Pizca de Sal</div></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                         <h3 class="text-xl font-bold text-[#3D0000] mb-2 text-center">Proporción de Harinas</h3>
+                         <p class="text-gray-600 mb-4 text-center">La receta utiliza una proporción de 2 a 1 de Harina 00 sobre Sémola, logrando un equilibrio perfecto.</p>
+                        <div class="chart-container">
+                            <canvas id="flourRatioChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process" class="mb-16">
+                <h2 class="text-3xl font-bold text-[#3D0000] mb-8 text-center">El Proceso: De la Harina al Plato</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-4">
+                    
+                    <div class="flow-step">
+                        <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">1️⃣</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">Creación de la Masa</h3>
+                            <p class="text-gray-600">Forma un "volcán" con las harinas, rompe el huevo en el centro con el aceite y bate suavemente, incorporando la harina poco a poco.</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">2️⃣</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">El Amasado</h3>
+                            <p class="text-gray-600">Amasa vigorosamente. La paciencia es clave para desarrollar el gluten y obtener una masa suave, lisa y elástica.</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                         <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">3️⃣</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">El Reposo Mágico</h3>
+                            <p class="text-gray-600">Envuelve la masa en film transparente. El reposo relaja el gluten, haciendo la masa mucho más manejable para el estirado.</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">4️⃣</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">Estirado y Corte</h3>
+                            <p class="text-gray-600">Estira la masa con un rodillo o máquina hasta el grosor deseado y córtala en tu forma favorita: tallarines, fettuccine, etc.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                         <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">5️⃣</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">Cocción Rápida</h3>
+                            <p class="text-gray-600">Hierve abundante agua con sal. La pasta fresca se cocina muy rápido, ¡no la descuides!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="bg-white rounded-lg shadow-md p-6 w-full h-full flex flex-col justify-center">
+                            <div class="text-5xl mb-4">🍝</div>
+                            <h3 class="text-xl font-bold text-[#3D0000] mb-2">¡Listo!</h3>
+                            <p class="text-gray-600">Sirve inmediatamente con tu salsa preferida y disfruta del auténtico sabor de la pasta casera.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="metrics" class="mb-16">
+                <h2 class="text-3xl font-bold text-[#3D0000] mb-8 text-center">Tiempos Clave</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <p class="text-6xl font-black text-[#F58800]">10-15</p>
+                        <p class="text-xl text-gray-700 mt-2">Minutos de Amasado</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <p class="text-6xl font-black text-[#F58800]">30</p>
+                        <p class="text-xl text-gray-700 mt-2">Minutos de Reposo</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <p class="text-6xl font-black text-[#F58800]">2-4</p>
+                        <p class="text-xl text-gray-700 mt-2">Minutos de Cocción</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t-2 border-[#FFC700]">
+            <p class="text-gray-600">Creado con pasión por la buena cocina.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('flourRatioChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Harina 00', 'Sémola de Trigo Duro'],
+                    datasets: [{
+                        label: 'Proporción de Harina (g)',
+                        data: [100, 50],
+                        backgroundColor: [
+                            '#FFC700',
+                            '#F58800'
+                        ],
+                        borderColor: [
+                            '#FFFFFF',
+                            '#FFFFFF'
+                        ],
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                             labels: {
+                                color: '#3D0000',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
